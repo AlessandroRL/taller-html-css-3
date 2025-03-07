@@ -7,61 +7,112 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <h1>Computación Cuántica</h1>
-    <nav>
-        <ul>
-            <li><a href="#introduccion">Introducción</a></li>
-            <li><a href="#principios">Principios</a></li>
-            <li><a href="#aplicaciones">Aplicaciones</a></li>
-            <li><a href="#futuro">Futuro</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+        <h1>Computación Cuántica</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#principios">Principios</a></li>
+                <li><a href="#aplicaciones">Aplicaciones</a></li>
+                <li><a href="#futuro">Futuro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <section id="introduccion">
-        <h2>Introducción a la Computación Cuántica</h2>
-        <p>La computación cuántica es un tipo de computación que aprovecha los fenómenos de la mecánica cuántica, como la superposición y el entrelazamiento, para realizar operaciones con datos.</p>
-    </section>
-
-    <section id="principios">
-        <h2>Principios Fundamentales</h2>
-        <div class="principios-container">
-            <div class="principio">
-                <h3>Superposición</h3>
-                <p>Los qubits pueden existir en múltiples estados simultáneamente, a diferencia de los bits clásicos.</p>
+    <main>
+        <section id="introduccion">
+            <h2>Introducción a la Computación Cuántica</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>La computación cuántica es un tipo de computación que aprovecha los fenómenos de la mecánica cuántica, como la superposición y el entrelazamiento, para realizar operaciones con datos.</p>
+                    <p>A diferencia de la computación clásica, que utiliza bits (0 o 1), la computación cuántica utiliza qubits, que pueden existir en múltiples estados simultáneamente.</p>
+                </div>
+                <div class="intro-image">
+                    <div class="quantum-sphere"></div>
+                </div>
             </div>
-            <div class="principio">
-                <h3>Entrelazamiento</h3>
-                <p>Los qubits pueden estar correlacionados de tal manera que el estado de uno depende del estado de otro, sin importar la distancia.</p>
+        </section>
+
+        <section id="principios">
+            <h2>Principios Fundamentales</h2>
+            <div class="principios-container">
+                <div class="principio">
+                    <h3>Superposición</h3>
+                    <p>Los qubits pueden existir en múltiples estados simultáneamente, a diferencia de los bits clásicos.</p>
+                    <div class="principio-icon superposicion"></div>
+                </div>
+                <div class="principio">
+                    <h3>Entrelazamiento</h3>
+                    <p>Los qubits pueden estar correlacionados de tal manera que el estado de uno depende del estado de otro, sin importar la distancia.</p>
+                    <div class="principio-icon entrelazamiento"></div>
+                </div>
+                <div class="principio">
+                    <h3>Interferencia</h3>
+                    <p>Los estados cuánticos pueden interferir entre sí, amplificando o cancelando probabilidades.</p>
+                    <div class="principio-icon interferencia"></div>
+                </div>
             </div>
-            <div class="principio">
-                <h3>Interferencia</h3>
-                <p>Los estados cuánticos pueden interferir entre sí, amplificando o cancelando probabilidades.</p>
+        </section>
+
+        <section id="aplicaciones">
+            <h2>Aplicaciones</h2>
+            <p>La computación cuántica tiene aplicaciones potenciales en diversos campos:</p>
+            <ul class="aplicaciones-list">
+                <li>
+                    <span class="aplicacion-title">Criptografía</span>
+                    <p>Desarrollo de algoritmos de encriptación cuántica y ruptura de sistemas de encriptación clásicos.</p>
+                </li>
+                <li>
+                    <span class="aplicacion-title">Simulación molecular</span>
+                    <p>Modelado preciso de moléculas complejas para el desarrollo de nuevos materiales y medicamentos.</p>
+                </li>
+                <li>
+                    <span class="aplicacion-title">Optimización</span>
+                    <p>Resolución de problemas complejos de optimización en logística, finanzas y planificación.</p>
+                </li>
+                <li>
+                    <span class="aplicacion-title">Inteligencia artificial</span>
+                    <p>Aceleración de algoritmos de aprendizaje automático y procesamiento de grandes conjuntos de datos.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="futuro">
+            <h2>El Futuro de la Computación Cuántica</h2>
+            <div class="futuro-container">
+                <p>A medida que la tecnología avanza, esperamos ver computadoras cuánticas más potentes y accesibles, revolucionando campos como la medicina, la ciencia de materiales y la inteligencia artificial.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2025</h3>
+                            <p>Computadoras cuánticas con más de 1000 qubits</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2030</h3>
+                            <p>Primeras aplicaciones comerciales a gran escala</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2040</h3>
+                            <p>Integración de la computación cuántica en la vida cotidiana</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="aplicaciones">
-        <h2>Aplicaciones</h2>
-        <p>La computación cuántica tiene aplicaciones potenciales en diversos campos:</p>
-        <ul>
-            <li>Criptografía</li>
-            <li>Simulación molecular</li>
-            <li>Optimización</li>
-            <li>Inteligencia artificial</li>
-        </ul>
-    </section>
-
-    <section id="futuro">
-        <h2>El Futuro de la Computación Cuántica</h2>
-        <p>A medida que la tecnología avanza, esperamos ver computadoras cuánticas más potentes y accesibles, revolucionando campos como la medicina, la ciencia de materiales y la inteligencia artificial.</p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2025 Computación Cuántica - Proyecto Educativo</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Computación Cuántica - Proyecto Educativo</p>
+    </footer>
 </body>
 </html>
