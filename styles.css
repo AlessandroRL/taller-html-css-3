@@ -16,11 +16,25 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #051937, #004d7a, #008793, #00bf72);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    z-index: -1;
+}
 header h1 {
     margin-bottom: 1rem;
     animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -35,10 +49,26 @@ nav a {
     text-decoration: none;
     padding: 0.5rem;
     transition: all 0.3s ease;
+    position: relative;
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
+nav a:hover::after {
+    width: 100%;
+}
+
+
 nav a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     transform: translateY(-3px);
 }
 
@@ -75,8 +105,10 @@ h2 {
     margin-bottom: 1rem;
     border-bottom: 2px solid #051937;
     padding-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Grid Layout para la sección de principios */
 .principios-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -89,18 +121,46 @@ h2 {
     padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.principio::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(5, 25, 55, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.principio:hover::before {
+    transform: scale(10);
 }
 
 .principio:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .principio h3 {
     color: #051937;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
+.principio p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilos para la sección de aplicaciones */
 #aplicaciones ul {
     margin-left: 2rem;
     margin-top: 1rem;
@@ -108,20 +168,76 @@ h2 {
 
 #aplicaciones li {
     transition: transform 0.3s ease;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+#aplicaciones li::before {
+    content: "→";
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#aplicaciones li:hover::before {
+    opacity: 1;
+    transform: translateX(5px);
 }
 
 #aplicaciones li:hover {
     transform: translateX(10px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* Estilos para el futuro */
+#futuro p {
+    position: relative;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#futuro p::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    transform: rotate(45deg);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+
+/* Estilos para el footer */
 footer {
     background-color: #051937;
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #051937, #004d7a, #008793, #00bf72);
+    filter: blur(50px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+
+
+/* Animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -142,6 +258,7 @@ footer {
     }
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
     .principios-container {
         grid-template-columns: 1fr;
