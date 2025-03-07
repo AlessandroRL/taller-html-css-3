@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +12,11 @@ body {
     background-color: #f4f7f9;
 }
 
+/* Header y navegación */
 header {
     background-color: #051937;
     color: white;
-    padding: 1rem;
+    padding: 2rem 1rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -31,10 +33,65 @@ header::before {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     z-index: -1;
 }
+
+.quantum-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: float 15s infinite linear;
+}
+
+.quantum-particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-duration: 20s;
+}
+
+.quantum-particle:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    animation-duration: 25s;
+    animation-delay: 2s;
+}
+
+.quantum-particle:nth-child(3) {
+    top: 30%;
+    left: 80%;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translate(100px, 50px) scale(1.5);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(50px, 100px) scale(1);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translate(-50px, 50px) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+    }
+}
+
 header h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     animation: fadeIn 1.5s ease-in-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
 }
 
 nav ul {
@@ -50,7 +107,9 @@ nav a {
     padding: 0.5rem;
     transition: all 0.3s ease;
     position: relative;
+    font-weight: bold;
 }
+
 nav a::after {
     content: '';
     position: absolute;
@@ -66,12 +125,12 @@ nav a:hover::after {
     width: 100%;
 }
 
-
 nav a:hover {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     transform: translateY(-3px);
 }
 
+/* Contenido principal */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -79,7 +138,7 @@ main {
 }
 
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     opacity: 0;
     animation: slideIn 1s ease-out forwards;
 }
@@ -102,10 +161,81 @@ section:nth-child(4) {
 
 h2 {
     color: #051937;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border-bottom: 2px solid #051937;
     padding-bottom: 0.5rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+}
+
+/* Sección de introducción */
+.intro-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+.intro-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.intro-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantum-sphere {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at 30% 30%, #00bf72, #008793, #004d7a, #051937);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 183, 114, 0.5);
+    animation: pulse 4s infinite alternate;
+}
+
+.quantum-sphere::before, .quantum-sphere::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: orbit 10s linear infinite;
+}
+
+.quantum-sphere::after {
+    animation-duration: 15s;
+    animation-direction: reverse;
+    border-width: 1px;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(0, 183, 114, 0.5);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 50px rgba(0, 183, 114, 0.8);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Grid Layout para la sección de principios */
@@ -124,6 +254,9 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .principio::before {
@@ -158,66 +291,242 @@ h2 {
 .principio p {
     position: relative;
     z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+.principio-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: auto;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+}
+
+.superposicion {
+    background: linear-gradient(45deg, #051937, #004d7a);
+    border-radius: 50%;
+    position: relative;
+    animation: superposicion 3s infinite alternate;
+}
+
+.superposicion::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #008793, #00bf72);
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(5px);
+    animation: superposicion-alt 3s infinite alternate;
+}
+
+@keyframes superposicion {
+    0% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes superposicion-alt {
+    0% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.entrelazamiento {
+    position: relative;
+}
+
+.entrelazamiento::before, .entrelazamiento::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 15px;
+}
+
+.entrelazamiento::before {
+    background-color: #051937;
+    left: 0;
+    animation: entrelazamiento-1 3s infinite alternate;
+}
+
+.entrelazamiento::after {
+    background-color: #00bf72;
+    right: 0;
+    animation: entrelazamiento-2 3s infinite alternate;
+}
+
+@keyframes entrelazamiento-1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrelazamiento-2 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.interferencia {
+    position: relative;
+}
+
+.interferencia::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(circle at center, #051937, #004d7a 10px, #008793 20px, #00bf72 30px);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: interferencia 5s infinite linear;
+}
+
+@keyframes interferencia {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
 }
 
 /* Estilos para la sección de aplicaciones */
-#aplicaciones ul {
-    margin-left: 2rem;
-    margin-top: 1rem;
+.aplicaciones-list {
+    list-style: none;
+    margin-top: 1.5rem;
 }
 
-#aplicaciones li {
-    transition: transform 0.3s ease;
-    margin-bottom: 0.5rem;
+.aplicaciones-list li {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    padding-left: 1.5rem;
 }
-#aplicaciones li::before {
+
+.aplicaciones-list li::before {
     content: "→";
     position: absolute;
-    left: -20px;
+    left: 10px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#aplicaciones li:hover::before {
+.aplicaciones-list li:hover::before {
     opacity: 1;
     transform: translateX(5px);
 }
 
-#aplicaciones li:hover {
+.aplicaciones-list li:hover {
     transform: translateX(10px);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-/* Estilos para el futuro */
-#futuro p {
-    position: relative;
-    padding: 1rem;
+
+.aplicacion-title {
+    font-weight: bold;
+    color: #051937;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Estilos para la sección de futuro */
+.futuro-container {
     background-color: white;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#futuro p::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    right: 30px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    transform: rotate(45deg);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: -1;
+.timeline {
+    margin-top: 2rem;
+    position: relative;
+    padding-left: 2rem;
 }
 
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.5rem;
+    width: 20px;
+    height: 20px;
+    background-color: #00bf72;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 191, 114, 0.5);
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: #f4f7f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(10px);
+}
+
+.timeline-content h3 {
+    color: #051937;
+    margin-bottom: 0.5rem;
+}
 
 /* Estilos para el footer */
 footer {
     background-color: #051937;
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    margin-top: 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -234,8 +543,6 @@ footer::before {
     opacity: 0.3;
     z-index: -1;
 }
-
-
 
 /* Animaciones */
 @keyframes fadeIn {
@@ -267,5 +574,33 @@ footer::before {
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
+    }
+    
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .quantum-sphere {
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-dot {
+        left: -2rem;
+        width: 15px;
+        height: 15px;
     }
 }
